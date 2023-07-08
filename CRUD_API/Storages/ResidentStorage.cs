@@ -17,6 +17,12 @@ namespace CRUD_API.Storages
             _mapper = mapper;
         }
 
+        /// <summary>
+        /// Возвращает информацию о жителях, отфильтрованных по переданным параметрам 
+        /// </summary>
+        /// <param name="ageFilter"></param>
+        /// <param name="sexFilter"></param>
+        /// <returns></returns>
         public List<ResidentGetAllViewModel> GetAll(AgeFilter ageFilter, SexFilter sexFilter, OwnerParameters ownerParameters)
         {
             var residents = _dbContext.Residents.ToList()
